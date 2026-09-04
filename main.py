@@ -35,7 +35,7 @@ async def main(page: ft.Page):
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             spacing=20
         ),
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),  # Corregido para compatibilidad total en Android
         expand=True,
     )
 
@@ -249,7 +249,7 @@ async def main(page: ft.Page):
         height=120,
         bgcolor="#2C3E50",
         border_radius=10,
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
         content=ft.Column(
             [
                 ft.Icon(ft.Icons.CAMERA_ALT, color="white", size=28),
@@ -525,7 +525,7 @@ async def main(page: ft.Page):
             alignment=ft.MainAxisAlignment.CENTER,
             spacing=10
         ),
-        alignment=ft.alignment.center,
+        alignment=ft.Alignment(0, 0),
         expand=True
     )
 
@@ -619,7 +619,6 @@ async def main(page: ft.Page):
     page.controls.clear()
     page.add(login_view)
     page.update()
-
 
 # ==========================================
 # --- PUNTO DE ENTRADA ÚNICO DE LA APP -----

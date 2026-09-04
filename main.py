@@ -4,30 +4,27 @@ import time
 
 def main(page: ft.Page):
     # ==========================================
-    # --- CONFIGURACIÓN DE PÁGINA Y ESTILOS ----
+    # --- CONFIGURACIÓN EXCLUSIVA PARA MÓVIL ---
     # ==========================================
-    page.title = "EduSmart - U.E. 17 de Septiembre de San Francisco De Milagro"
-    page.window_width = 380
-    page.window_height = 680
-    page.window_resizable = False
+    page.title = "EduSmart"
     page.padding = 0
     page.theme_mode = ft.ThemeMode.LIGHT
-    page.bgcolor = "#F7F5EE"  # Beige claro institucional
+    page.bgcolor = "#F7F5EE"  # Fondo institucional
 
-    # Variables de estado global dentro del scope de main
+    # Variables de estado
     lista_cursos = []
     curso_seleccionado = None
     alumnos_temporal_ocr = []
 
     # ==========================================
-    # --- 1. PANTALLA DE CARGA (SPLASH) --------
+    # --- PANTALLA DE CARGA (SPLASH) -----------
     # ==========================================
     splash_view = ft.Container(
         content=ft.Column(
             [
-                ft.Icon(ft.icons.SCHOOL, size=80, color="#5C3A21"),
-                ft.Text("EduSmart", size=28, weight=ft.FontWeight.BOLD, color="#5C3A21"),
-                ft.Text("U.E. 17 de Septiembre De San Francisco  de Milagro", size=14, color="#8C5A32"),
+                ft.Icon(ft.Icons.SCHOOL, size=80, color="#5C3A21"),
+                ft.Text("DocenteSmart", size=28, weight=ft.FontWeight.BOLD, color="#5C3A21"),
+                ft.Text("U.E. 17 de Septiembre", size=16, color="#8C5A32", text_align=ft.TextAlign.CENTER),
                 ft.ProgressRing(color="#8C5A32", stroke_width=3)
             ],
             alignment=ft.MainAxisAlignment.CENTER,
@@ -37,7 +34,6 @@ def main(page: ft.Page):
         alignment=ft.alignment.center,
         expand=True,
     )
-
     # ==========================================
     # --- 2. VISTAS DE ASISTENCIA Y NOTAS ------
     # ==========================================

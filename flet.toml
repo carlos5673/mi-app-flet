@@ -1,0 +1,6 @@
+[app]
+name = "DocenteSmart"
+author = "Carlos Jadan"
+
+[build]
+target = "main.py"
